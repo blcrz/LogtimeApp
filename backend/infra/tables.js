@@ -40,6 +40,23 @@ class Tables {
             'REFERENCES users(id)' +
           ');',
 
+        'CREATE TABLE IF NOT EXISTS logtime'+
+        '( '+
+            'id int NOT NULL AUTO_INCREMENT, '+
+            'type varchar(200) NOT NULL, '+
+            'logdate date NOT NULL, '+
+            'startTime time NOT NULL, '+
+            'endTime time NOT NULL, '+
+            'description varchar(200), ' +
+            'idUser int NOT NULL, ' +
+            'idTask int NOT NULL, ' +
+            'PRIMARY KEY (id), '+
+            'CONSTRAINT FK_logtime_users FOREIGN KEY (idUser) ' +
+            'REFERENCES users(id), ' +
+            'CONSTRAINT FK_logtime_tasks FOREIGN KEY (idTask) ' +
+            'REFERENCES tasks(id)' +
+          ');',
+
           'CREATE TABLE IF NOT EXISTS projects_tasks'+
           '( '+
           'id int NOT NULL AUTO_INCREMENT, '+
