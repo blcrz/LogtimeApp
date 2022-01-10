@@ -4,8 +4,16 @@
       <v-container class="py-0 fill-height">
 
         <!-- Menu Buttons -->
-        <v-btn to="/" text>Dashboard</v-btn>
 
+        <v-btn  to="/" text>
+          <v-icon
+            color="blue darken-2"
+            class="mr-2"
+          >
+            mdi-clipboard-text-clock-outline
+          </v-icon>
+          Logtime
+        </v-btn>
         <v-spacer></v-spacer>
 
         <v-responsive max-width="260"> </v-responsive>

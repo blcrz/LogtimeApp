@@ -14,7 +14,11 @@
           item-key="name"
           class="elevation-1"
           hide-default-footer
-        />
+        >
+          <template v-slot:items="item">
+            <v-chip small color="green" class="white--text">{{ item.type }}</v-chip>
+          </template>
+        </v-data-table>
 
       </v-expansion-panel-content>
     </v-expansion-panel>
@@ -36,13 +40,10 @@ export default {
   data() {
     return {
       headers: [
-        {
-          text: 'Subject',
-          sortable: false,
-          value: 'subject',
-        },
-        { text: 'Status', value: 'status' },
-        { text: 'User', value: 'idUser' },
+        { text: 'Task', value: 'subject' },
+        { text: 'Time', value: 'total_time' },
+        { text: 'Description', value: 'description' },
+        { text: 'Type', value: 'type' },
       ],
     };
   },

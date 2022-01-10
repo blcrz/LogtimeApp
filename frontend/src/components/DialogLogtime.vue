@@ -249,6 +249,7 @@ export default {
   watch: {
     dialog(value) {
       if(value) {
+        this.resetFields()
         this.getTasks()
       }
     }
@@ -283,7 +284,12 @@ export default {
       }
 
       this.dialog = false
+    },
 
+    resetFields() {
+      const fields = ['type', 'logdate', 'startTime', 'endTime', 'description', 'idTask']
+      fields.forEach(f => this.logtime[f] = null)
+      this.$refs.observer.reset()
     }
   }
 };
