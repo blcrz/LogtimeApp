@@ -11,6 +11,8 @@ connection.connect((erro) => {
         Tables.init(connection)
         const app = customExpress()
 
-        app.listen(process.env.PORT || 3001, () => console.log('server running'))
+        const port = process.env.PORT || 3001
+
+        app.listen(port, () => console.log('server running'))
     }
 })
