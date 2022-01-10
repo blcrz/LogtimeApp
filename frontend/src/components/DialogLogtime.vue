@@ -239,7 +239,7 @@ export default {
       startTime: null,
       endTime: null,
       description: null,
-      idUser: 11231,
+      idUser: localStorage.getItem('userId'),
       idTask: null
     }
   }),
@@ -255,7 +255,8 @@ export default {
 
   methods: {
     async getTasks() {
-      this.tasks = await api.getTasks(11231)
+      const userId = localStorage.getItem('userId')
+      this.tasks = await api.getTasks(userId)
     },
 
     async save() {

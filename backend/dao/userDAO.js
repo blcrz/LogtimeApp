@@ -17,6 +17,18 @@ class UserDAO {
             })
         })
     }
+
+    selectAll = () => {
+        return new Promise((resolve, reject) => {
+            this.connection.query('select id, username, profile from users', (error, result) => {
+                if (error) {
+                    reject('Cannot load users.')
+                } else {
+                    resolve(result)
+                }
+            })
+        })
+    }
 }
 
 module.exports = new UserDAO()

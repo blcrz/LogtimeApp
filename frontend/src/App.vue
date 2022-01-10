@@ -4,8 +4,20 @@
       <v-container class="py-0 fill-height">
 
         <!-- Menu Buttons -->
-
-        <v-btn  to="/" text>
+        <v-btn class="mr-2" to="/" text>
+          <v-icon
+            color="blue darken-2"
+            class="mr-2"
+          >
+            mdi-account-circle-outline
+          </v-icon>
+          Users
+        </v-btn>
+        <v-btn
+          v-if="isUserSelected"
+          to="/logtime"
+          text
+        >
           <v-icon
             color="blue darken-2"
             class="mr-2"
@@ -14,7 +26,6 @@
           </v-icon>
           Logtime
         </v-btn>
-        <v-spacer></v-spacer>
 
         <v-responsive max-width="260"> </v-responsive>
       </v-container>
@@ -37,14 +48,28 @@
 </template>
 
 <script>
+import eventBus from "./eventBus"
+
 export default{
   name: "App",
 
-  components: {
+  data() {
+    return {
+      userSelected: false
+    }
   },
 
-  data: () => ({
-  }),
+  computed: {
+    isUserSelected() {
+      return this.userSelected || !!localStorage.getItem('userId')
+    }
+  },
+
+  mounted() {
+    eventBus.$on('user-selected', (value) => {
+      this.userSelected = value
+    })
+  },
 };
 </script>
 <style>

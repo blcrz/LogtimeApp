@@ -4,6 +4,7 @@
   >
     <v-expansion-panel
       v-for="project in projects"
+      :key="project.id"
     >
       <v-expansion-panel-header>{{ project.projectKey }}</v-expansion-panel-header>
       <v-expansion-panel-content>
@@ -15,9 +16,6 @@
           class="elevation-1"
           hide-default-footer
         >
-          <template v-slot:items="item">
-            <v-chip small color="green" class="white--text">{{ item.type }}</v-chip>
-          </template>
         </v-data-table>
 
       </v-expansion-panel-content>

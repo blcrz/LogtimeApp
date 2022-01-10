@@ -16,6 +16,11 @@ const apiClient = {
     return response.data;
   },
 
+  async getUsers() {
+    const response = await axios.get('/users');
+    return response.data;
+  },
+
 };
 
 export default apiClient;

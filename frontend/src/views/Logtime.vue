@@ -24,7 +24,7 @@ import ExpansionProject from "@/components/ExpansionProjects";
 import DialogLogtime from "@/components/DialogLogtime";
 
 export default {
-  name: "Dashboard",
+  name: "Logtime",
   data() {
     return {
       projects: [],
@@ -40,7 +40,8 @@ export default {
   methods: {
     async getProjects() {
       this.overlay = true
-      const data = await api.getProjects(11231);
+      const userId = localStorage.getItem('userId')
+      const data = await api.getProjects(userId);
       this.projects = data;
       this.overlay = false
     }
