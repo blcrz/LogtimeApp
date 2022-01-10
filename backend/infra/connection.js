@@ -8,4 +8,8 @@ const connection = mysql.createConnection({
     database: 'heroku_c6f7beb8dde02ce'
 })
 
+setInterval(function () {
+    connection.query('SELECT 1');
+}, 5000);
+
 module.exports = connection
