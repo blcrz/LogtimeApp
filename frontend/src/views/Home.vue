@@ -2,12 +2,19 @@
   <v-container>
     <div class="header">
       <h1>User Name Report</h1>
-      <DialogLogtime/>
+      <DialogLogtime @load-projects="getProjects"/>
     </div>
 
     <ExpansionProject
       :projects="projects"
     />
+
+    <v-overlay :value="overlay">
+      <v-progress-circular
+        indeterminate
+        size="64"
+      ></v-progress-circular>
+    </v-overlay>
   </v-container>
 </template>
 <script>
@@ -21,6 +28,7 @@ export default {
   data() {
     return {
       projects: [],
+      overlay: false
     };
   },
 
@@ -31,14 +39,15 @@ export default {
 
   methods: {
     async getProjects() {
+      this.overlay = true
       const data = await api.getProjects(11231);
       this.projects = data;
+      this.overlay = false
     }
   },
 
   mounted() {
     this.getProjects();
-
   },
 };
 </script>

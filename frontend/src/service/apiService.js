@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = {
   async getProjects(id) {
-    const response = await axios.get(`/projects-by-user/${id}`);
+    const response = await axios.get(`/projects-by-user/${id}`,{ headers: {"Access-Control-Allow-Origin": "*"}});
     return response.data;
   },
 

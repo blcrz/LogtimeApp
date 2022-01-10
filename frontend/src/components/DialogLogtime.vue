@@ -118,7 +118,6 @@
                           :error-messages="errors"
                           label="Start *"
                           append-icon="mdi-clock-outline"
-                          readonly
                           v-on="on"
                         />
                       </template>
@@ -154,7 +153,6 @@
                           :error-messages="errors"
                           label="End *"
                           append-icon="mdi-clock-outline"
-                          readonly
                           v-on="on"
                         />
                       </template>
@@ -274,6 +272,8 @@ export default {
           position: 'top-right',
           timeout: 5000
         })
+
+        this.$emit('load-projects')
       } catch(error) {
         this.$dialog.notify.error(error, {
           position: 'top-right',
@@ -289,7 +289,10 @@ export default {
     resetFields() {
       const fields = ['type', 'logdate', 'startTime', 'endTime', 'description', 'idTask']
       fields.forEach(f => this.logtime[f] = null)
-      this.$refs.observer.reset()
+
+      this.$nextTick(() => {
+        this.$refs.observer.reset()
+      })
     }
   }
 };
