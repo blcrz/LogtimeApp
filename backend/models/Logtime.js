@@ -1,4 +1,4 @@
-const LogtimeDAO = require('../dao/LogtimeDAO')
+const LogtimeDAO = require('../dao/logtimeDAO')
 
 class Logtime {
 
