@@ -45,6 +45,7 @@ export default {
 
     setUser(item) {
       localStorage.setItem('userId', item.id)
+      localStorage.setItem('username', item.username)
       eventBus.$emit('user-selected', true)
       this.$router.push('/logtime')
     }

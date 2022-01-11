@@ -18,8 +18,7 @@ Vue.use(VuetifyDialog, {
   }
 })
 
-axios.defaults.baseURL = "http://localhost:3001"
-// "https://topi-logtime.herokuapp.com"
+axios.defaults.baseURL = "https://topi-logtime.herokuapp.com"
 
 new Vue({
   router,

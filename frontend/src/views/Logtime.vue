@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="header">
-      <h1>User Name Report</h1>
+      <h1>{{ currentUsername }} Report</h1>
       <DialogLogtime @load-projects="getProjects"/>
     </div>
 
@@ -30,6 +30,12 @@ export default {
       projects: [],
       overlay: false
     };
+  },
+
+  computed: {
+    currentUsername() {
+      return localStorage.getItem('username')
+    }
   },
 
   components: {
