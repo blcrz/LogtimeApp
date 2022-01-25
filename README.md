@@ -1,5 +1,20 @@
 # <h1>Desenvolvimento Logtime</h1>
   
+  Aplicação desenvolvida para controle de tasks e horários.
+  
+  ## Tecnologias utilizadas:
+  * Vue.js
+  * Vuetify
+  * CSS
+  * Axios
+  * MySQL
+  * Node.js
+  * Git
+  
+## Deploys:
+  * Frontend: [Vercel](https://topi-logtime.vercel.app)
+  * Backend: [API-HEROKU](https://topi-logtime.herokuapp.com)
+  * Banco de Dados: ClearDB
   
   ## Instruções da API:
   
@@ -154,20 +169,6 @@
         "idUser": 11232
       }
     ]
-    
-# As tecnologias utilizadas foram:
-  * Vue.js
-  * Vuetify
-  * CSS
-  * Axios
-  * MySQL
-  * Node.js
-  * Git
-  
-# Deploys:
-  * Frontend: [Vercel](https://topi-logtime.vercel.app)
-  * Backend: [API-HEROKU](https://topi-logtime.herokuapp.com)
-  * Banco de Dados: ClearDB
 
 # Desenvolvedora responsável:
 * [Bárbara Luiza Cruz](https://www.linkedin.com/in/b%C3%A1rbara-cruz-228552199/)
